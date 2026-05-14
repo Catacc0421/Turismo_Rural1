@@ -8,11 +8,21 @@ import java.util.Properties;
 
 public class EmailService {
 
+    private static final String GMAIL_USUARIO;
+    private static final String GMAIL_APP_PASSWORD;
 
-    private static final String GMAIL_USUARIO   = "catacc3844@gmail.com";   //
-    private static final String GMAIL_APP_PASSWORD = "dgiv uins wgis umcm"; //
-    // ─────────────────────────────────────────────────────────────────
-
+    static {
+        java.util.Properties cfg = new java.util.Properties();
+        try (java.io.InputStream in = EmailService.class
+                .getClassLoader()
+                .getResourceAsStream("config.properties")) {
+            if (in != null) cfg.load(in);
+        } catch (Exception e) {
+            System.err.println("Error cargando config.properties: " + e.getMessage());
+        }
+        GMAIL_USUARIO      = cfg.getProperty("gmail.usuario", "");
+        GMAIL_APP_PASSWORD = cfg.getProperty("gmail.password", "");
+    }
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
 
