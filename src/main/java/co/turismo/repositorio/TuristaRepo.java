@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 
 
 public class TuristaRepo {
+    private static final TuristaRepo INSTANCIA = new TuristaRepo();
+    public static TuristaRepo get() { return INSTANCIA; }
 
     /**
      * Lista observable que almacena todos los turistas.
