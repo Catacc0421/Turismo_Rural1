@@ -18,7 +18,7 @@ import java.util.UUID;
 
 public class ReservaVista {
 
-    private final TuristaRepo     turistaRepo = new TuristaRepo();
+    private final TuristaRepo turistaRepo = TuristaRepo.get();
     private final ExperienciaRepo expRepo     = ExperienciaRepo.get();
     private final ReservaRepo     reservaRepo = ReservaRepo.get();
 

@@ -78,7 +78,7 @@ public class TuristaVista extends VBox {
      * eventos y aplica el diseno.
      */
     public TuristaVista() {
-        this.turistaRepo = new TuristaRepo();
+        this.turistaRepo = TuristaRepo.get();
         this.turistaSeleccionado = null;
 
         inicializarComponentes();
