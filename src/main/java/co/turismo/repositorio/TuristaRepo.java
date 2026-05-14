@@ -5,42 +5,8 @@ import co.turismo.modelo.Turista;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-/**
- * =====================================================
- * REPOSITORIO: TuristaRepo.java
- * =====================================================
- * Clase que gestiona el almacenamiento y la logica CRUD
- * de los objetos Turista usando una ObservableList.
- *
- * ¿Por que ObservableList?
- * -----------------------
- * ObservableList es una coleccion especial de JavaFX que
- * permite que la vista (TableView) se actualice AUTOMATICAMENTE
- * cuando se agrega, elimina o modifica un elemento en la lista.
- * Esto elimina la necesidad de refrescar manualmente la tabla.
- *
- * Borrado Logico:
- * ---------------
- * En lugar de eliminar fisicamente un turista de la lista,
- * se cambia su estadoActivo a false. Esto permite:
- * - Conservar el historial de turistas
- * - Poder reactivar turistas en el futuro
- * - Mantener la integridad referencial con otras entidades
- *   (reservas, pagos, etc. que puedan referenciar al turista)
- *
- * Validaciones:
- * -------------
- * Antes de agregar un turista se verifica que:
- * - El numero de documento no exista previamente
- * - El correo electronico no exista previamente
- * Estas validaciones previenen duplicados en el sistema.
- * =====================================================
- */
-public class TuristaRepo {
 
-    // =============================================
-    // ATRIBUTO PRINCIPAL: Lista Observable
-    // =============================================
+public class TuristaRepo {
 
     /**
      * Lista observable que almacena todos los turistas.
@@ -49,10 +15,6 @@ public class TuristaRepo {
      * (como el TableView).
      */
     private final ObservableList<Turista> turistas;
-
-    // =============================================
-    // CONSTRUCTOR
-    // =============================================
 
     /**
      * Constructor del repositorio.
@@ -75,8 +37,8 @@ public class TuristaRepo {
 
         turistas.add(new Turista(
                 "CC", "1098765432",
-                "Juan Carlos", "Perez Garcia",
-                "juan.perez@correo.com",
+                "Catalina", "Clavijo",
+                "catacc3844@gmail.com",
                 java.time.LocalDate.of(1990, 5, 15),
                 "Maria Garcia", "3001234567",
                 true
@@ -109,10 +71,6 @@ public class TuristaRepo {
                 true
         ));
     }
-
-    // =============================================
-    // METODO DE ACCESO A LA LISTA
-    // =============================================
 
     /**
      * Retorna la lista observable de turistas.

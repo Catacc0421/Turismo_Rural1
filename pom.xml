@@ -43,6 +43,13 @@
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
+        <!-- Jakarta Mail — envío de correo por Gmail SMTP (App Password) -->
+        <dependency>
+            <groupId>org.eclipse.angus</groupId>
+            <artifactId>angus-mail</artifactId>
+            <version>2.0.2</version>
+        </dependency>
     </dependencies>
 
     <!-- ============================================ -->

@@ -4,20 +4,7 @@ package co.turismo.modelo;
 import java.time.LocalDate;
 import java.time.Period;
 
-/**
- * =====================================================
- * MODELO: Turista.java
- * =====================================================
- * Clase que representa a un Turista dentro del sistema
- * de reservas de Turismo Rural.
- *
- * Contiene la informacion personal del turista,
- * datos de contacto de emergencia y su estado activo.
- *
- * Implementa logica de negocio como el calculo de edad
- * y la obtencion del nombre completo.
- * =====================================================
- */
+
 public class Turista {
 
     // =============================================
@@ -206,9 +193,6 @@ public class Turista {
         return nombres + " " + apellidos;
     }
 
-    // =============================================
-    // METODO toString (util para depuracion)
-    // =============================================
 
     @Override
     public String toString() {

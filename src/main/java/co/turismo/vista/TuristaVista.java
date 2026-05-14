@@ -18,30 +18,7 @@ import javafx.scene.text.FontWeight;
 import java.time.LocalDate;
 import java.util.Optional;
 
-/**
- * =====================================================
- * VISTA + CONTROLADOR: TuristaVista.java
- * =====================================================
- * Clase que implementa la interfaz grafica de usuario
- * para la gestion CRUD de Turistas.
- *
- * Arquitectura: Combina la Vista y el Controlador en una
- * sola clase que extiende VBox. Este patron es comun en
- * aplicaciones JavaFX pequenas/medianas donde no se usa FXML.
- *
- * Componentes principales:
- * - TableView: Muestra la lista de turistas registrados
- * - Formulario: Permite ingresar/editar datos del turista
- * - Botones: Acciones CRUD (Nuevo, Guardar, Editar, Borrar, Limpiar)
- *
- * Diseno visual:
- * - Usa VBox, HBox y GridPane para la organizacion
- * - Padding y spacing consistentes
- * - Colores y fuentes profesionales
- * - Campos alineados con etiquetas
- * - Botones organizados horizontalmente
- * =====================================================
- */
+
 public class TuristaVista extends VBox {
 
     // =============================================
@@ -306,6 +283,13 @@ public class TuristaVista extends VBox {
         this.setPadding(new Insets(20));
         this.setStyle("-fx-background-color: #FAFAFA;");
 
+        // ---- Botón volver ----
+        Button btnVolver = new Button("← Volver al Menú");
+        btnVolver.setStyle("-fx-background-color:#2C5F2D;-fx-text-fill:white;-fx-font-weight:bold;-fx-cursor:hand;-fx-background-radius:6;-fx-padding:8 18;");
+        btnVolver.setOnAction(e -> MainApp.mostrarMenu());
+        HBox headerBar = new HBox(btnVolver);
+        headerBar.setStyle("-fx-background-color:#2C5F2D;-fx-padding:10 20;");
+        headerBar.setAlignment(Pos.CENTER_LEFT);
         // ---- Titulo principal ----
         Label lblTitulo = new Label("Gestion de Turistas");
         lblTitulo.setFont(Font.font("System", FontWeight.BOLD, 22));
@@ -401,6 +385,7 @@ public class TuristaVista extends VBox {
 
         // ---- Ensamblar todo en el VBox principal ----
         this.getChildren().addAll(
+                headerBar,
                 contenedorTitulo,
                 panelTabla,
                 panelFormulario,
